@@ -6,18 +6,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './shared/material.module';
 import { FormsModule } from '@angular/forms';
-import { ToolbarComponent } from './contact-manager/components/toolbar/toolbar.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes:Routes = [
+  {
+    path: 'contactmanager',
+    loadChildren: () => import('./contactmanager/contactmanager.module').then(m => m.ContactmanagerModule)
+  },
+  {
+    path: '**', redirectTo:'contactmanager'
+  }
+]
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ToolbarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
