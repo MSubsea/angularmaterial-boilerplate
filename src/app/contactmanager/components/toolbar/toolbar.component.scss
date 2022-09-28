@@ -1,0 +1,6 @@
+.side-nav-toggle {
+    display: none;
+    @media(max-width: 720px) {
+        display: flex;
+    }
+}
