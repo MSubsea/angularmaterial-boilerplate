@@ -1,5 +1,5 @@
 <mat-sidenav-container class="app-sidenav-container">
-    <app-toolbar></app-toolbar>
+    <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
     <router-outlet></router-outlet>
     
     <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10"
