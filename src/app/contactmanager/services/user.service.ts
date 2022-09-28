@@ -17,6 +17,10 @@ export class UserService {
   get users():Observable<User[]> {
     return this._users.asObservable()
   }
+
+  getUserById(id:number) {
+    return this.datastore.users.find(user => user.id == id)
+  }
  
   loadUsers() {
     const url= "https://angular-material-api.azurewebsites.net/users";

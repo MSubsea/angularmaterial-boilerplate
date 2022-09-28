@@ -1,1 +1,6 @@
-<p>main-content works!</p>
+<div *ngIf="!user">
+    <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="user">
+    <mat-card><h1>Simple card</h1></mat-card>
+</div>
